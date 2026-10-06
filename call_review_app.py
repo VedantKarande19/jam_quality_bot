@@ -370,7 +370,7 @@ def _run_tvs_rating(groq_key: str, aligned: str, english: str, rubric: str) -> d
     messages = _build_rating_messages(rubric_c, aligned_c, english_c)
     resp = client.chat.completions.create(
         # model="llama-3.3-70b-versatile",
-        model = "whisper-large-v3",
+        model = "openai/gpt-oss-120b",
         messages=messages,
         temperature=0.1,
     )
