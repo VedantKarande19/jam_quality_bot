@@ -369,7 +369,8 @@ def _run_tvs_rating(groq_key: str, aligned: str, english: str, rubric: str) -> d
     client = Groq(api_key=groq_key)
     messages = _build_rating_messages(rubric_c, aligned_c, english_c)
     resp = client.chat.completions.create(
-        model="llama-3.3-70b-versatile",
+        # model="llama-3.3-70b-versatile",
+        model = "whisper-large-v3",
         messages=messages,
         temperature=0.1,
     )
